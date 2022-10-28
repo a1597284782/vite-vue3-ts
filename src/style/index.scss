@@ -1,0 +1,30 @@
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+a:focus,
+a:active,
+input:focus,
+button,
+div,
+svg,
+span {
+  outline: none !important;
+}
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
