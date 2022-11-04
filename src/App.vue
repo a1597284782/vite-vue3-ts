@@ -4,22 +4,14 @@
   </el-config-provider>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed } from 'vue'
+<script lang="ts" setup>
+import { computed } from 'vue'
 import useStore from '@/store'
 
-export default defineComponent({
-  setup() {
-    const { app } = useStore()
+const { app } = useStore()
 
-    // 控制全局组件大小
-    const size = computed(() => app.ElementPlusSize)
-
-    return {
-      size
-    }
-  }
-})
+// 控制全局组件大小
+const size = computed(() => app.ElementPlusSize)
 </script>
 
 <style lang="scss" scoped></style>
