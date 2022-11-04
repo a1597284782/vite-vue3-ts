@@ -19,11 +19,11 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { useStore } from 'vuex'
+import useStore from '@/store'
 
 export default defineComponent({
   setup() {
-    const store = useStore()
+    const { app } = useStore()
 
     const sizeOptions = ref([
       { label: '大号', value: 'large' },
@@ -33,7 +33,7 @@ export default defineComponent({
 
     const size = ref('')
     size.value = localStorage.getItem('size') || 'default'
-    store.commit('app/setSize', size.value)
+    app.setSize(size.value)
 
     const router = useRouter()
     const route = useRoute()
@@ -46,7 +46,7 @@ export default defineComponent({
     // 改变全局组件大小
     const handleSetSize = (val: string) => {
       size.value = val
-      store.commit('app/setSize', val)
+      app.setSize(val)
       localStorage.setItem('size', val)
       refreshView()
     }

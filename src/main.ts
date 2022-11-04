@@ -3,7 +3,7 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import App from '@/App.vue'
-import store from '@/store'
+import { createPinia } from 'pinia'
 import router from '@/router'
 import '@/router/permission'
 
@@ -11,7 +11,7 @@ import '@/router/permission'
 import '@/style/index.scss'
 
 const app = createApp(App)
-app.use(store)
+app.use(createPinia())
 app.use(router)
 
 app.use(ElementPlus)

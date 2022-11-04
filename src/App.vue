@@ -6,14 +6,14 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import { useStore } from 'vuex'
+import useStore from '@/store'
 
 export default defineComponent({
   setup() {
-    const store = useStore()
+    const { app } = useStore()
 
     // 控制全局组件大小
-    const size = computed(() => store.state?.app.ElementPlusSize)
+    const size = computed(() => app.ElementPlusSize)
 
     return {
       size
